@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chklib_lib", "chklib_lib.vcproj", "{194C2CE5-B067-47CA-AC16-0F997CB45A9F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chklib_test", "..\chklib_test\chklib_test.vcproj", "{9467898C-B1AD-4BDF-8FB2-9B166710AFC2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{194C2CE5-B067-47CA-AC16-0F997CB45A9F} = {194C2CE5-B067-47CA-AC16-0F997CB45A9F}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{194C2CE5-B067-47CA-AC16-0F997CB45A9F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{194C2CE5-B067-47CA-AC16-0F997CB45A9F}.Debug|Win32.Build.0 = Debug|Win32
+		{194C2CE5-B067-47CA-AC16-0F997CB45A9F}.Release|Win32.ActiveCfg = Release|Win32
+		{194C2CE5-B067-47CA-AC16-0F997CB45A9F}.Release|Win32.Build.0 = Release|Win32
+		{9467898C-B1AD-4BDF-8FB2-9B166710AFC2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9467898C-B1AD-4BDF-8FB2-9B166710AFC2}.Debug|Win32.Build.0 = Debug|Win32
+		{9467898C-B1AD-4BDF-8FB2-9B166710AFC2}.Release|Win32.ActiveCfg = Release|Win32
+		{9467898C-B1AD-4BDF-8FB2-9B166710AFC2}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,47 @@
+用法：
+	包含chklib.h头文件，并添加chklib_lib.lib静态库。
+	
+	详细函数使用可查看chklib.h中对函数的注释。
+		
+		
+功能描述：
+	一.初始化chklib日志系统
+		1.使用命名空间CHKLIB
+			using namespace CHKLIB;
+		2.设置日志流输出方向
+			OLOG_SETTING(OLOG_FILE, "./log.txt");
+				OLOG_FILE		文件
+				OLOG_CONSOLE	控制台
+				OLOG_WINLOG		windows日志
+				
+	二.跟踪函数调用
+		在函数定义的第一句话加入FuncTrace宏
+		例如：
+			void Func()
+			{
+				FuncTrace;
+				
+				//函数的功能实现
+				...
+			}
+		该功能支持多线程程序的调试，会打印出线程的ID。
+		可以利用该功能跟踪程序的堆栈调用情况。
+		
+	三.循环内容打印
+		在循环中调用OutputCyclVarValues(ULONG nBegin, ULONG nEnd, ULONG nStep, char* lpFmt, ...)函数。
+			nBegin	从第nBegin次循环开始打印
+			nEnd	从第nEnd次循环开始停止打印
+			nStep	循环打印区间内，每循环nStep次打印一次
+			lpFmt	格式化字符串，详情参考printf()等函数
+		例如：
+		for(int i = 0;i < 10000;++i)
+		{
+			OutputCyclVarValues(5, 200, 10, "%s i=%d", "In main function", i);
+
+			//循环执行体，做该做的事
+		}
+		该功能支持多线程函数循环的打印，但目前暂不支持嵌套循环的打印。
+		
+	四.打印一条自定义日志
+		调用OutputDbgLog(char* lpFmt, ...)函数，函数内参数为格式化字符串参数，详情参考printf()等函数。
+	
