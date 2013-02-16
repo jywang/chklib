@@ -18,9 +18,10 @@ void CLogStreamFile::OutputDbgLog(char* lpFmt, ...)
     char szLog[1024] = {0};
     DWORD dwProcID = GetCurrentProcessId();
     DWORD dwThreadID = GetCurrentThreadId();
+    DWORD dwTime = GetTickCount();
 
     int nLen = vsprintf(szMsg, lpFmt, va_list(1 + &lpFmt) );
-    sprintf(szLog, "[ProcessID:0x%08X | ThreadID:0x%08X] %s", dwProcID, dwThreadID, szMsg);
+    sprintf(szLog, "[ProcessID:0x%08X | ThreadID:0x%08X][Time:%d] %s", dwProcID, dwThreadID, dwTime, szMsg);
 
     m_FileStream<<szLog<<endl;
 }
@@ -48,9 +49,10 @@ void CLogStreamCmd::OutputDbgLog(char* lpFmt, ...)
     char szLog[1024] = {0};
     DWORD dwProcID = GetCurrentProcessId();
     DWORD dwThreadID = GetCurrentThreadId();
+    DWORD dwTime = GetTickCount();
 
     int nLen = vsprintf(szMsg, lpFmt, va_list(1 + &lpFmt) );
-    sprintf(szLog, "[ProcessID:0x%08X | ThreadID:0x%08X] %s", dwProcID, dwThreadID, szMsg);
+    sprintf(szLog, "[ProcessID:0x%08X | ThreadID:0x%08X][Time:%d] %s", dwProcID, dwThreadID, dwTime, szMsg);
 
     cout<<szLog<<endl;
 }
@@ -74,9 +76,10 @@ void CLogStreamSys::OutputDbgLog(char* lpFmt, ...)
     char szLog[1024] = {0};
     DWORD dwProcID = GetCurrentProcessId();
     DWORD dwThreadID = GetCurrentThreadId();
+    DWORD dwTime = GetTickCount();
 
     int nLen = vsprintf(szMsg, lpFmt, va_list(1 + &lpFmt) );
-    sprintf(szLog, "[ProcessID:0x%08X | ThreadID:0x%08X] %s", dwProcID, dwThreadID, szMsg);
+    sprintf(szLog, "[ProcessID:0x%08X | ThreadID:0x%08X][Time:%d] %s", dwProcID, dwThreadID, dwTime, szMsg);
 
     ::OutputDebugStringA(szLog);
     ::OutputDebugStringA("\n");
