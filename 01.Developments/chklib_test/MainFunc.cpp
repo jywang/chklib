@@ -13,7 +13,7 @@ OLOG_SETTING(OLOG_FILE, "./log.txt");
 void Function(int a,char b)
 {
     FuncTrace;
-    OutputFuncValueTable("Function | a = 0x%X, b = 0x%X", a, b);
+    //OutputFuncValueTable("Function | a = 0x%X, b = 0x%X", a, b);
 
     cout<<"In Function"<<endl;		//º¯ÊýÖ´ÐÐÌå
 }

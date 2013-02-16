@@ -55,7 +55,7 @@ int _cdecl OutputDbgLog(char* lpFmt, ...);
 * 输出函数参数表
 *   args：格式化字符串
 */
-void _cdecl OutputFuncValueTable(char* lpFmt, ...);
+//void _cdecl OutputFuncValueTable(char* lpFmt, ...);
 
 /**
 * 根据步数输出循环中的指定变量的值

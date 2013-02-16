@@ -38,22 +38,22 @@ COLogSettings::COLogSettings(UINT nType, char* szFilePath)
 int CTracer::m_nCount = 1;
 CTracer::CTracer(char *szFuncName)
 {
-    m_pSpace = new char[m_nCount + 2];
+    /*m_pSpace = new char[m_nCount + 2];
     memset(m_pSpace, 0, m_nCount + 2);
     memset(m_pSpace, '-', m_nCount);
-    m_pSpace[m_nCount] = '>';
+    m_pSpace[m_nCount] = '>';*/
 
-    LOGSTM.OutputDbgLog("Enter%s%s", m_pSpace, szFuncName);
+    LOGSTM.OutputDbgLog("Enter ---> %s", szFuncName);
     m_szFuncName = new char[(strlen(szFuncName) + 1)];
     strcpy(m_szFuncName, szFuncName);
 
-    ++m_nCount;
+    /*++m_nCount;*/
 }
 CTracer::~CTracer()
 {
-    LOGSTM.OutputDbgLog("Leave%s%s", m_pSpace, m_szFuncName);
-    --m_nCount;
-    delete[] m_szFuncName;
+    LOGSTM.OutputDbgLog("Leave ---> %s", m_szFuncName);
+    /*--m_nCount;
+    delete[] m_szFuncName;*/
 }
 
 
@@ -70,15 +70,15 @@ int OutputDbgLog(char* lpFmt, ...)
     return 0;
 }
 
-void OutputFuncValueTable(char* lpFmt, ...)
-{
-	va_list args;
-	va_start(args, lpFmt);
-	char strTmp[1024] = {0};
-	_vsnprintf(strTmp, 1024, lpFmt, args);
-	va_end(args);
-	LOGSTM.OutputDbgLog(strTmp);
-}
+//void OutputFuncValueTable(char* lpFmt, ...)
+//{
+//	va_list args;
+//	va_start(args, lpFmt);
+//	char strTmp[1024] = {0};
+//	_vsnprintf(strTmp, 1024, lpFmt, args);
+//	va_end(args);
+//	LOGSTM.OutputDbgLog(strTmp);
+//}
 
 void OutputCyclVarValues(ULONG nBegin, ULONG nEnd, ULONG nStep, char* lpFmt, ...)
 {
