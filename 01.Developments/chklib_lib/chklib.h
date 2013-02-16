@@ -94,5 +94,4 @@ private:
 
 }//end namespace chklib
 
-
 #endif
